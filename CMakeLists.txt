@@ -3,4 +3,7 @@ project(GraphT)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(GraphBasicTest main.cpp GraphT.h)
+add_executable(GraphBasicTest main.cpp GraphT.h
+        TraverseTests.cpp)
+
+add_executable(TraversalTest TraverseTests.cpp GraphT.h)

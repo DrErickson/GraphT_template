@@ -33,12 +33,33 @@ int main() {
 
     graph.AddEdge("Washington", "Atlanta", 600);
     graph.AddEdge("Washington", "Atlanta", 1300);
-    
+
+    cout << "Testing bad edge" << endl;
+    cout << "----------------" << endl;
+    try
+    {
+        graph.AddEdge("Narnia", "Wonderland", 100);
+    }
+    catch (VertexNotFound error) {
+        cout << "Vertex " << error.GetBadVertex() << " not found" << endl;
+    }
+    cout << endl;
+
+    cout << "Vertices" << endl;
+    cout << "--------" << endl;
+    unordered_set<string> vertices = graph.GetVertices();
+    for (auto it = vertices.begin(); it != vertices.end(); ++it) {
+        cout << *it << endl;
+    }
+    cout << endl;
+
+    cout << "Weight between Atlanta and Houston: ";
     int* weight = graph.GetWeight("Atlanta", "Houston");
     if (weight != nullptr)
         cout << *weight << endl;
     else
         cout << "No connection!" << endl;
+    cout << endl;
     
     queue<string> adjactentVertices;
     adjactentVertices = graph.GetToVertices("Dallas");
