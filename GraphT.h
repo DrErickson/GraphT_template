@@ -55,7 +55,6 @@ private:
     unordered_map<string, unordered_map<string, T>> graph;
     unordered_set<string> vertices;
 
-    priority_queue<pair<string,T>> pqueue;
     GRAPH_TYPE graphType;
 };
 
