@@ -45,7 +45,7 @@ public:
     unordered_set<string> GetVertices();
 
     // Returns vector of vertices connected to vertex
-    vector<string> GetToVertices(string vertex);
+    vector<string> GetAdjacent(string vertex);
 
     queue<string> DFS(string startVertex);
     queue<string> BFS(string startVertex);
@@ -55,6 +55,7 @@ private:
     unordered_map<string, unordered_map<string, T>> graph;
     unordered_set<string> vertices;
 
+    priority_queue<pair<string,T>> pqueue;
     GRAPH_TYPE graphType;
 };
 
