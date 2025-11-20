@@ -62,7 +62,7 @@ int main() {
     cout << endl;
     
     queue<string> adjactentVertices;
-    adjactentVertices = graph.GetToVertices("Dallas");
+    adjactentVertices = graph.GetAdjacent("Dallas");
     
     cout << "Dallas is connected to:" << endl;
     while (!adjactentVertices.empty()) {
